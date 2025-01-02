@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differentiation Formulas</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.8;
+            background-color: #f7f9fc;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:red;
+        }
+
+        h2 {
+            margin: 20px 0 10px;
+            font-size: 20px;
+        }
+
+        .container {
+            display: grid;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @media (min-width: 800px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+       /* @media (min-width: 1200px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }*/
+
+        .formula {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 18px;
+            line-height: 1.8;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-container, .right-container {
+            padding: 10px;
+        }
+
+        .formula:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <h1>Differentiation Formulas</h1>
+	<h2> Limit:</h2>
+		<div class="container">
+			<div class="formula">\[ \text{ (i)    }   \lim_{x \to a} \frac{f(x)}{f(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} f(x)}  \]</div>
+			<div class="formula">\[ \text{ (ii)    }   \lim_{x \to a} (c) = c    \text{   [c constant]} \]</div>
+			<div class="formula">\[ \text{ (iii)    }   \lim_{x \to a} (cx) = c \lim_{ x \to a} (x)    \text{   [c constant]}  \]</div>
+			<div class="formula">\[ \text{ (iv)    } \lim_{x \to 0} \frac{ \sin x} {x} = 1 \] </div> 
+			<div class="formula">\[ \text{ (v)    } \lim_{x \to 0} \frac{x} {\sin x} = 1 \] </div> 
+			<div class="formula">\[ \text{ (vi)    } \lim_{x \to 0} \frac{ \tan x} {x} = 1 \] </div> 
+			<div class="formula">\[ \text{ (vii)    } \lim_{x \to 0} \frac{x} { \tan x} = 1 \] </div> 
+			<div class="formula">\[ \text{ (viii)    } \lim_{x \to 0} \cos x = 1 \] </div> 
+			<div class="formula">\[ \text{ (ix)    } \lim_{x \to 0} \frac{1} {\cos x} = 1 \] </div> 
+			<div class="formula">\[ \text{ (x)    } \lim_{x \to a} \frac{x^n - a^n} {x -a} = na^{n-1} \] </div> 
+			<div class="formula">\[ \text{ (xi)    } \lim_{x \to a} \frac{x^m - a^m} {x^n -a^n} = \frac{m}{n} \left(a^{m-n }\right) \] </div> 
+			<div class="formula">\[ \text{ (xii)    } \lim_{x \to 0} \frac{\ln (1 + x) }{x} = 1 \] </div> 
+			<div class="formula">\[ \text{ (xiii)    } \lim_{x \to \infty} \left( 1+ \frac{m}{x} \right)^x = e^m \] </div> 
+			<div class="formula">\[ \text{ (xiv)    } \lim_{x \to 0} \left( 1+ x \right)^{ \frac{1}{x}} = e \] </div> 
+			<div class="formula">\[ \text{ (xv)    } \lim_{x \to \infty } \left( 1+ \frac{1}{x} \right)^x = e \] </div> 
+			<div class="formula">\[ \text{ (xvi)    }   \lim_{x \to a} \frac{e^x-1}{x} = 1 \] </div>
+			<div class="formula">\[ \text{ (xvii)    }   \lim_{x \to 0} \frac{ \sin ^{-1} x}{x} = 1 \] </div>
+			<div class="formula">\[ \text{ (xviii)    }   \lim_{x \to 0} \frac{x}{\sin ^{-1}x} = 1 \] </div>
+			<div class="formula">\[ \text{ (xix)    }   \lim_{x \to 0} \sin x = \lim_{x \to 0} x \] </div>
+			<div class="formula">\[ \text{ (xx)    }   \lim_{x \to 0} \frac{ \tan ^{-1} x}{x} = 1 \] </div>
+			<div class="formula">\[ \text{ (xxi)    }   \lim_{x \to 0} \frac{x}{\tan ^{-1}x} = 1 \] </div>
+			<div class="formula">\[ \text{ (xxii)    }   \lim_{x \to h} \frac{f(x + h) - f(x)}{h} = \frac{d}{dx} f(x)  \]</div>
+			<div class="formula">\[ \text{ (xxiii)    } \lim_{x \to \infty} \left( 1+ \frac{m}{x} \right)^{nx} = e^{mn} \] </div> 
+			<div class="formula">\[ \text{ (xxiv)    } \lim_{x \to \infty} \left( 1+ {m}{x} \right)^\frac{n}{x} = e^{mn} \] </div> 
+		
+		</div>
+	<h2>Differentiation:</h2>
+		<div class="container">
+			<div class="formula"> \[ \text{ (i)   } \frac{d}{dx}(x^n) = n x^{n-1} \]</div>
+			<div class="formula"> \[ \text{ (ii)   } \frac{d}{dx}(\sin(nx)) = n \cos(nx) \]</div>
+			<div class="formula"> \[ \text{ (iii)   } \frac{d}{dx}(\cos(x)) = -\sin(x) \]</div>
+			<div class="formula"> \[ \text{ (iv)   } \frac{d}{dx}(\tan(x)) = \sec^2(x) \]</div>
+			<div class="formula"> \[ \text{ (v)   } \frac{d}{dx}(\cot(x)) = -\csc^2(x) \]</div>
+			<div class="formula"> \[ \text{ (vi)   } \frac{d}{dx}(\sec(x)) = \sec(x) \tan(x) \]</div>
+			<div class="formula"> \[ \text{ (vii)   } \frac{d}{dx}(\csc(x)) = -\csc(x) \cot(x) \]</div>
+			<div class="formula"> \[ \text{ (viii)   } \frac{d}{dx}(e^x) = e^x \]</div>
+			<div class="formula"> \[ \text{ (ix)   } \frac{d}{dx}(\ln(x)) = \frac{1}{x} \]</div>
+			<div class="formula"> \[ \text{ (x)   } \frac{d}{dx}(a^x) = a^x \ln(a) \]</div>
+			<div class="formula"> \[ \text{ (xi)   } \frac{d}{dx}(\log_a(x)) = \frac{1}{x \ln(a)} \]</div>
+			<div class="formula"> \[ \text{ (xii)   } \frac{d}{dx}(u v) = u\frac{dv}{dx} + v\frac{du}{dx} \]</div>
+			<div class="formula"> \[ \text{ (xiii)   } \frac{d}{dx}\left(\frac{u}{v}\right) = \frac{v \frac{du}{dx} - u \frac{dv}{dx}}{v^2} \]</div>
+			<div class="formula"> \[ \text{ (xiv)   } \frac{dy}{dx} = \frac{dy}{dz}\cdot\frac{dz}{dx} \]</div>
+			<div class="formula"> \[ \text{ (xv)   } \frac{d}{dx}(\sin^{-1}(x)) = \frac{1}{\sqrt{1 - x^2}} \]</div>
+			<div class="formula"> \[ \text{ (xvi)   } \frac{d}{dx}(\cos^{-1}(x)) = -\frac{1}{\sqrt{1 - x^2}} \]</div>
+			<div class="formula"> \[ \text{ (xvii)   } \frac{d}{dx}(\tan^{-1}(x)) = \frac{1}{1 + x^2} \]</div>
+			<div class="formula"> \[ \text{ (xviii)   } \frac{d}{dx}(\cot^{-1}(x)) = -\frac{1}{1 + x^2} \]</div>
+			<div class="formula"> \[ \text{ (xix)   } \frac{d}{dx}(\sec^{-1}(x)) = \frac{1}{|x| \sqrt{x^2 - 1}} \]</div>
+			<div class="formula"> \[ \text{ (xx)   } \frac{d}{dx}(\csc^{-1}(x)) = -\frac{1}{|x| \sqrt{x^2 - 1}} \]</div>
+			<div class="formula"> \[ \text{ (xxi)   } f'(x) = \frac{dy}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x) }{ h } \]</div>
+			<div class="formula"> \[ \text{ (xxii)   } \frac{d}{dx}(u \pm v) = \frac{du}{dx} \pm \frac{dv}{dx} \]</div>
+			<div class="formula"> \[ \text{ (xxiii)   } \frac{d}{dx}(uvw) = \frac{\frac{d}{dx}(u)}{u} + \frac{\frac{d}{dx}(v)}{v} + \frac{\frac{d}{dx}(w)}{w} \]</div>
+			<div class="formula"> \[ \text{ (xxiv)   } \frac{d}{dx}(u^v) = u^v \frac{d}{dx} \left( v \ln(u) \right) \]</div>
+
+</div>
+	<h2>N<sup>th</sup> Derivative: </h2>
+		<div class="container">
+			<div class="formula"> \[ \text{(i)   If } y = x^n, \text{ then } y_n = n! \]</div>
+			<div class="formula"> \[ \text{(ii)   If } y = e^{ax + b} , \text{ then } y_n = a^n e^{ax + b} \]</div>
+			<div class="formula"> \[ \text{(iii)   If } y = a^x, \text{ then } y_n = a^x(\ln a )^n \]</div>
+			<div class="formula"> \[
+			\begin{aligned} \text{(iv)   If } y &= \sin (ax + b), \\ \text{ then } y_n &= a^n \sin[\frac{n \pi}{2} + ax + b]
+			 \end{aligned}\]</div>
+			<div class="formula"> \[
+			\begin{aligned}
+			 \text{(v)   If } y &= \cos (ax + b), \\ \text{ then } y_n &= a^n \cos[\frac{n \pi}{2} + ax + b] \end{aligned} \]</div>
+			<div class="formula"> \[ \text{(vi)   If } y = \ln x, \text{ then } y_n = \frac{(-1)^{n-1} (n-1)! }{x^n} \]</div>
+			<div class="formula"> \[ \text{(vi)   If } y = \ln x, \text{ then } y_n = \frac{(-1)^{n-1} (n-1)! }{x^n} \]</div>
+		
+			<div class="formula"> 
+			  \[
+				\begin{aligned}
+				  \text{(vi) If } y &= e^{ax} \sin \left(bx + c \right), 
+				  \text{ then } \\ y_n &= \left(a^2 + b^2 \right)^{\frac{n}{2}} e^{ax} \sin \left(bx + c + n \tan^{-1} \frac{b}{a}\right)
+				\end{aligned}
+			  \]
+			</div>
+			<div class="formula"> 
+			  \[
+				\begin{align*}
+				  \text{(vi) If } y &= e^{ax} \cos \left(bx + c \right), 
+				  \text{ then } \\ y_n &= \left(a^2 + b^2 \right)^{\frac{n}{2}} e^{ax} \cos \left(bx + c + n \tan^{-1} \frac{b}{a}\right)
+				\end{align*}
+			  \]
+			</div>
+
+
+			</div>
+		<h2>Tangent & Perpendicular: </h2>
+			<div class="container">
+			    <div class="formula">\[
+				\begin{aligned}
+				  \text{(i)   The equation of tangent at }(x_1,y_1): \\ \\ y - y_1 = f'(x)(x-x_1)
+				\end{aligned}
+			  \]</div>
+			  <div class="formula">\[
+				\begin{aligned}
+				  \text{(i)   The equation of perpendicular at }(x_1,y_1): \\ \\ x - x_1 + f'(x)(y - y_1) = 0
+				\end{aligned}
+			  \]</div>
+				</div>
+	
+</body>
+</html>
