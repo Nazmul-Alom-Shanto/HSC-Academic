@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Progress Tracker</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f3e7e9, #e3eeff);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #444;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #444;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #76c7c0;
+      display: inline-block;
+    }
+
+    .tasks-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      
+    }
+
+    .task {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      background: linear-gradient(120deg, #76c7c0, #58a6ff);
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .task:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      accent-color: #ff6363;
+      cursor: pointer;
+      scale: 1.5;
+    }
+
+    .progress-container {
+      margin: 20px 0;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-inner {
+      height: 20px;
+      background: linear-gradient(90deg, #ff6363, #76c7c0);
+      width: 0;
+      text-align: center;
+      color: white;
+      line-height: 20px;
+      font-weight: bold;
+      animation: progressAnimation 1s ease-in-out forwards;
+    }
+
+    @keyframes progressAnimation {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: var(--progress-width);
+      }
+    }
+
+    section {
+      background: #f5f5f5;
+      border-left: 5px solid #76c7c0;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Study Progress Tracker</h1>
+  <div class="container">
+    <div class="progress-container">
+      <h2>Overall Progress</h2>
+      <div class="progress-bar">
+        <div id="overall-progress" class="progress-bar-inner" style="--progress-width: 0%;">0%</div>
+      </div>
+    </div>
+
+    <div class="progress-container">
+      <h2>Current Goal Progress</h2>
+      <div class="progress-bar">
+        <div id="goal-progress" class="progress-bar-inner" style="--progress-width: 0%;">0%</div>
+      </div>
+    </div>
+
+    <section id="Physics">
+      <h2>Physics</h2>
+      <div id="physics-list" class="tasks-container"></div>
+    </section>
+
+    <section id="Chemistry">
+      <h2>Chemistry</h2>
+      <div id="chemistry-list" class="tasks-container"></div>
+    </section>
+
+    <section id="HigherMath">
+      <h2>Higher Math</h2>
+      <div id="highermath-list" class="tasks-container"></div>
+    </section>
+
+    <section id="Botany">
+      <h2>Botany</h2>
+      <div id="botany-list" class="tasks-container"></div>
+    </section>
+
+    <section id="Zoology">
+      <h2>Zoology</h2>
+      <div id="zoology-list" class="tasks-container"></div>
+    </section>
+  </div>
+
+  <script>
+    const sections = [
+      ["Physics", 84, "P"],
+      ["Chemistry", 56, "C"],
+      ["HigherMath", 68, "HM"],
+      ["Botany", 36, "B"],
+      ["Zoology", 30, "Z"]
+    ];
+
+    const listGoal = ["P-1", "P-4", "C-1", "HM-3", "HM-4"];
+
+    function createList(section, prefix, count) {
+      const container = document.getElementById(`${section.toLowerCase()}-list`);
+      for (let i = 1; i <= count; i++) {
+        const span = document.createElement("span");
+        span.className = "task";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = `${prefix}-${i}`;
+        checkbox.className = "task-checkbox";
+        checkbox.checked = JSON.parse(localStorage.getItem(`${prefix}-${i}`)) || false;
+        checkbox.addEventListener("change", updateProgress);
+
+        const label = document.createElement("label");
+        label.htmlFor = checkbox.id;
+        label.innerText = `${prefix}-${i}`;
+
+        span.appendChild(checkbox);
+        span.appendChild(label);
+        container.appendChild(span);
+      }
+    }
+
+    function updateProgress() {
+      let totalTasks = 0, completedTasks = 0;
+      let goalTasks = 0, completedGoalTasks = 0;
+
+      document.querySelectorAll(".task-checkbox").forEach((checkbox) => {
+        totalTasks++;
+        if (checkbox.checked) completedTasks++;
+
+        localStorage.setItem(checkbox.id, checkbox.checked);
+        if (listGoal.includes(checkbox.id)) {
+          goalTasks++;
+          if (checkbox.checked) completedGoalTasks++;
+        }
+      });
+
+      const overallPercent = Math.round((completedTasks / totalTasks) * 100);
+      const goalPercent = Math.round((completedGoalTasks / goalTasks) * 100);
+
+      document.getElementById("overall-progress").style.width = `${overallPercent}%`;
+      document.getElementById("overall-progress").style.setProperty("--progress-width", `${overallPercent}%`);
+      document.getElementById("overall-progress").textContent = `${overallPercent}%`;
+
+      document.getElementById("goal-progress").style.width = `${goalPercent}%`;
+      document.getElementById("goal-progress").style.setProperty("--progress-width", `${goalPercent}%`);
+      document.getElementById("goal-progress").textContent = `${goalPercent}%`;
+    }
+
+    sections.forEach((section) => {
+      createList(section[0], section[2], section[1]);
+    });
+
+    updateProgress();
+  </script>
+</body>
+</html>
