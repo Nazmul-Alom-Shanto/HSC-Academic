@@ -1,0 +1,99 @@
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: linear-gradient(to right, #ffecd2, #fcb69f);
+        color: #333;
+    }
+    h1 {
+        text-align: center;
+        color: #ffffff;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .search-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .search-container input {
+        padding: 10px;
+        width: 80%;
+        border: 2px solid #feb47b;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+    .dropdown {
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: #ffffff;
+    }
+    .dropdown-header {
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        padding: 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .dropdown-header:hover {
+        background: linear-gradient(to right, #feb47b, #ff7e5f);
+        color: #fff;
+    }
+    .arrow {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+    .dropdown-content {
+        position: relative;
+        padding: 15px;
+        display: none;
+        background: #f9f9f9;
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.6;
+        border-top: 2px solid #feb47b;
+    }
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    .dropdown.active .arrow {
+        transform: rotate(180deg);
+    }
+    .highlight {
+        background-color: yellow;
+    }
+    .play-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .copy {
+        background: #eee;
+        border: none;
+        border-radius: 100%;
+        padding: 7px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+    }
+    .copy:hover {
+        background:#ccc ;
+    } 
+    .copy-tooltip {
+        padding: 2px 6px;
+        background-color: #111;
+        color: #fff;
+        display: none;
+        border-radius: 3px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        transition: all 0.5s ease;
+    }
