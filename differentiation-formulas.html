@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Differentiation Formulas</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
-   <style>
+	<style>
         body {
             font-family: Arial, sans-serif;
             margin: 7px;
-            line-height: 1.2;
+            line-height: 1.5;
             background-color: #f7f9fc;
         }
 
@@ -20,9 +20,9 @@
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color:red;
+            color: red;
         }
-        
+
         h2 {
             margin: 20px 0 10px;
             font-size: 24px;
@@ -30,62 +30,45 @@
         }
 
         .container {
-           
             display: grid;
-            gap: 8px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
             padding: 10px;
+            justify-items: center;
         }
 
-        .container {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        @media (min-width: 600px) {
-            .container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1000px) {
-            .container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-   @media (min-width: 1200px) {
-            .container {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-   @media (min-width: 1500px) {
-            .container {
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
-     @media (min-width: 1800px) {
-            .container {
-                grid-template-columns: repeat(6, 1fr);
-            }
-        }
-   @media (min-width: 2100px) {
-            .container {
-                grid-template-columns: repeat(7, 1fr);
-            }
-        }
         .formula {
-           
             background-color: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 6px 0;
-            font-size: 12px;
-            line-height: 1.2;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px 2px;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.4;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            word-wrap: break-word;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
         }
 
-      
+        .formula:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+            background-color: #dff6ff;
+        }
+
+        .formula:nth-child(even) {
+            background-color: #e8f5e9;
+        }
 
         .formula:last-child {
             margin-bottom: 0;
+        }
+
+        @media (min-width: 1000px) {
+            .formula.long {
+                grid-column: span 2;
+            }
         }
     </style>
 
@@ -151,38 +134,80 @@
 
 </div>
 	<h2>📜 N<sup>th</sup> Derivative: </h2>
-		<div class="container">
-			<div class="formula"> \[ \text{(i)   If } y = x^n, \text{ then } y_n = n! \]</div>
-			<div class="formula"> \[ \text{(ii)   If } y = e^{ax + b} , \text{ then } y_n = a^n e^{ax + b} \]</div>
-			<div class="formula"> \[ \text{(iii)   If } y = a^x, \text{ then } y_n = a^x(\ln a )^n \]</div>
-			<div class="formula"> \[
-			\begin{aligned} \text{(iv)   If } y &= \sin (ax + b), \\ \text{ then } y_n &= a^n \sin[\frac{n \pi}{2} + ax + b]
-			 \end{aligned}\]</div>
-			<div class="formula"> \[
+	<div class="container">
+
+		<div class="formula">
+		  \[ \text{(i) If } \quad y = x^n, \quad \text{then } \quad y_n = n! \]
+		</div>
+	  
+		<div class="formula">
+		  \[ \text{(ii) If } \quad y = e^{ax + b}, \quad \text{then } \quad y_n = a^n e^{ax + b} \]
+		</div>
+	  
+		<div class="formula">
+		  \[ \text{(iii) If } \quad y = a^x, \quad \text{then } \quad y_n = a^x (\ln a)^n \]
+		</div>
+	  
+		<div class="formula">
+		  \[
 			\begin{aligned}
-			 \text{(v)   If } y &= \cos (ax + b), \\ \text{ then } y_n &= a^n \cos[\frac{n \pi}{2} + ax + b] \end{aligned} \]</div>
-			<div class="formula"> \[ \text{(vi)   If } y = \ln x, \text{ then } y_n = \frac{(-1)^{n-1} (n-1)! }{x^n} \]</div>
-			<div class="formula"> \[ \text{(vi)   If } y = \ln x, \text{ then } y_n = \frac{(-1)^{n-1} (n-1)! }{x^n} \]</div>
-		
-			<div class="formula"> 
-			  \[
-				\begin{aligned}
-				  \text{(vi) If } y &= e^{ax} \sin \left(bx + c \right), 
-				  \text{ then } \\ y_n &= \left(a^2 + b^2 \right)^{\frac{n}{2}} e^{ax} \sin \left(bx + c + n \tan^{-1} \frac{b}{a}\right)
-				\end{aligned}
-			  \]
-			</div>
-			<div class="formula"> 
-			  \[
-				\begin{align*}
-				  \text{(vi) If } y &= e^{ax} \cos \left(bx + c \right), 
-				  \text{ then } \\ y_n &= \left(a^2 + b^2 \right)^{\frac{n}{2}} e^{ax} \cos \left(bx + c + n \tan^{-1} \frac{b}{a}\right)
-				\end{align*}
-			  \]
-			</div>
-
-
-			</div>
+			  \text{(iv) If } \quad
+			  y &= \sin(ax + b), \\
+			  \text{then } \quad
+			  y_n &= a^n \sin\left(\frac{n\pi}{2} + ax + b\right)
+			\end{aligned}
+		  \]
+		</div>
+	  
+		<div class="formula">
+		  \[
+			\begin{aligned}
+			  \text{(v) If } \quad
+			  y &= \cos(ax + b), \\
+			  \text{then } \quad
+			  y_n &= a^n \cos\left(\frac{n\pi}{2} + ax + b\right)
+			\end{aligned}
+		  \]
+		</div>
+	  
+		<div class="formula">
+			\[
+			  \begin{aligned}
+				\text{(vi) If } \quad
+				y &= \ln x, \\
+				\text{then } \quad
+				y_n &= \frac{(-1)^{n-1}(n-1)!}{x^n}
+			  \end{aligned}
+			\]
+		  </div>
+		  
+	  
+		<div class="formula">
+		  \[
+			\begin{aligned}
+			  \text{(vii) If } \quad
+			  y &= e^{ax} \sin(bx + c), \\
+			  \text{then } \quad
+			  y_n &= \left(a^2 + b^2\right)^{n/2} e^{ax} \\
+				  &\quad \times \sin\left(bx + c + n \tan^{-1}\left(\frac{b}{a}\right)\right)
+			\end{aligned}
+		  \]
+		</div>
+	  
+		<div class="formula">
+		  \[
+			\begin{aligned}
+			  \text{(viii) If } \quad
+			  y &= e^{ax} \cos(bx + c), \\
+			  \text{then } \quad
+			  y_n &= \left(a^2 + b^2\right)^{n/2} e^{ax} \\
+				  &\quad \times \cos\left(bx + c + n \tan^{-1}\left(\frac{b}{a}\right)\right)
+			\end{aligned}
+		  \]
+		</div>
+	  
+	  </div>
+	  
 		<h2>📜 Tangent & Perpendicular: </h2>
 			<div class="container">
 			    <div class="formula">\[

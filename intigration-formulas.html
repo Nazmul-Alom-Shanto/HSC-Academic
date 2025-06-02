@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intigration Formulas</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 7px;
+            line-height: 1.5;
+            background-color: #f7f9fc;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: red;
+        }
+
+        h2 {
+            margin: 20px 0 10px;
+            font-size: 24px;
+            padding-left: 25px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            padding: 10px;
+            justify-items: center;
+        }
+
+        .formula {
+            background-color: #ecf0f1;
+            padding: 20px 2px;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.4;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            word-wrap: break-word;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .formula:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+            background-color: #dff6ff;
+        }
+
+        .formula:nth-child(even) {
+            background-color: #e8f5e9;
+        }
+
+        .formula:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 1000px) {
+            .formula.long {
+                grid-column: span 2;
+            }
+        }
+    </style>
+
+  
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const formulas = document.querySelectorAll('.formula');
+			formulas.forEach(el => {
+				if (el.innerText.length > 120) {
+					el.classList.add('long');
+				}
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+    <h1>Intigration Formulas</h1>
+	<h2>📜 Intigration:</h2>
+	<div class="container">
+		<div class="formula"> \[ \text{ (i)   } \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \ne -1) \]</div>
+		<div class="formula"> \[ \text{ (ii)   } \int \sin(nx) \, dx = -\frac{1}{n} \cos(nx) + C \]</div>
+		<div class="formula"> \[ \text{ (iii)   } \int \cos(x) \, dx = \sin(x) + C \]</div>
+		<div class="formula"> \[ \text{ (iv)   } \int \tan(x) \, dx = -\ln|\cos(x)| + C \]</div>
+		<div class="formula"> \[ \text{ (v)   } \int \cot(x) \, dx = \ln|\sin(x)| + C \]</div>
+		<div class="formula"> \[ \text{ (vi)   } \int \sec(x) \, dx = \ln|\sec(x) + \tan(x)| + C \]</div>
+		<div class="formula"> \[ \text{ (vii)   } \int \csc(x) \, dx = -\ln|\csc(x) + \cot(x)| + C \]</div>
+		<div class="formula"> \[ \text{ (viii)   } \int e^x \, dx = e^x + C \]</div>
+		<div class="formula"> \[ \text{ (ix)   } \int \frac{1}{x} \, dx = \ln|x| + C \]</div>
+		<div class="formula"> \[ \text{ (x)   } \int a^x \, dx = \frac{a^x}{\ln(a)} + C \quad (a > 0, a \ne 1) \]</div>
+		<div class="formula"> \[ \text{ (xi)   } \int \ln(x) \, dx = x \ln(x) - x + C \]</div>
+		<div class="formula"> \[ \text{ (xii)   } \int (u \pm v) \, dx = \int u \, dx \pm \int v \, dx \]</div>
+		<div class="formula"> \[ \text{ (xiii)   } \int u'v \, dx = uv - \int uv' \, dx \quad  \]</div> <!--\text{(Integration by parts)}-->
+		<div class="formula"> \[ \text{ (xiv)   } \int \frac{1}{1 + x^2} \, dx = \tan^{-1}(x) + C \]</div>
+		<div class="formula"> \[ \text{ (xv)   } \int \frac{1}{\sqrt{1 - x^2}} \, dx = \sin^{-1}(x) + C \]</div>
+		<div class="formula"> \[ \text{ (xvi)   } \int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C \]</div>
+		<div class="formula"> \[ \text{ (xvii)   } \int \frac{1}{\sqrt{x^2 + a^2}} \, dx = \ln\left|x + \sqrt{x^2 + a^2}\right| + C \]</div>
+		<div class="formula"> \[ \text{ (xviii)   } \int \frac{1}{\sqrt{x^2 - a^2}} \, dx = \ln\left|x + \sqrt{x^2 - a^2}\right| + C \quad \]</div> <!--(|x| > a) -->
+		<div class="formula"> \[ \text{ (xix)   } \int \sec^2(x) \, dx = \tan(x) + C \]</div>
+		<div class="formula"> \[ \text{ (xx)   } \int \csc^2(x) \, dx = -\cot(x) + C \]</div>
+		<div class="formula"> \[ \text{ (xxi)   } \int \sec(x)\tan(x) \, dx = \sec(x) + C \]</div>
+		<div class="formula"> \[ \text{ (xxii)   } \int \csc(x)\cot(x) \, dx = -\csc(x) + C \]</div>
+		<div class="formula"> \[ \text{ (xxiii)   } \int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1}\left(\frac{x}{a}\right) + C \]</div>
+		<div class="formula"> \[ \text{ (xxiv)   } \int \frac{dx}{x^2 - a^2} = \frac{1}{2a} \ln\left|\frac{x - a}{x + a}\right| + C \]</div>
+	</div>
+
+
+	
+</body>
+</html>
