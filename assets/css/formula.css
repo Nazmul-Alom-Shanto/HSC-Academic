@@ -29,6 +29,16 @@
         padding: 10px;
         justify-items: center;
     }
+    .container.nth-derivative {
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }
+    .serices {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 20px;
+        padding: 10px;
+        justify-content: center;
+    }
 
     .formula {
         background-color: #ecf0f1;
@@ -38,12 +48,11 @@
         line-height: 1.4;
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
         width: 100%;
-        max-width: 500px;
         word-wrap: break-word;
         transition: transform 0.2s, box-shadow 0.2s;
         text-align: center;
     }
-
+   
     .formula:hover {
         transform: scale(1.02);
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
