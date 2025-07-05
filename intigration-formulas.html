@@ -21,38 +21,58 @@
 
 </head>
 <body>
+	<h1>Integration Formulas</h1>
 
-    <h1>Intigration Formulas</h1>
-	<h2>📜 Intigration:</h2>
-	<div class="container">
-		<div class="formula"> \[ \text{ (i)   } \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \ne -1) \]</div>
-		<div class="formula"> \[ \text{ (ii)   } \int \sin(nx) \, dx = -\frac{1}{n} \cos(nx) + C \]</div>
-		<div class="formula"> \[ \text{ (iii)   } \int \cos(x) \, dx = \sin(x) + C \]</div>
-		<div class="formula"> \[ \text{ (iv)   } \int \tan(x) \, dx = -\ln|\cos(x)| + C \]</div>
-		<div class="formula"> \[ \text{ (v)   } \int \cot(x) \, dx = \ln|\sin(x)| + C \]</div>
-		<div class="formula"> \[ \text{ (vi)   } \int \sec(x) \, dx = \ln|\sec(x) + \tan(x)| + C \]</div>
-		<div class="formula"> \[ \text{ (vii)   } \int \csc(x) \, dx = -\ln|\csc(x) + \cot(x)| + C \]</div>
-		<div class="formula"> \[ \text{ (viii)   } \int e^x \, dx = e^x + C \]</div>
-		<div class="formula"> \[ \text{ (ix)   } \int \frac{1}{x} \, dx = \ln|x| + C \]</div>
-		<div class="formula"> \[ \text{ (x)   } \int a^x \, dx = \frac{a^x}{\ln(a)} + C \quad (a > 0, a \ne 1) \]</div>
-		<div class="formula"> \[ \text{ (xi)   } \int \ln(x) \, dx = x \ln(x) - x + C \]</div>
-		<div class="formula"> \[ \text{ (xii)   } \int (u \pm v) \, dx = \int u \, dx \pm \int v \, dx \]</div>
-		<div class="formula">   \[ \text{ (xiii)  } \int u \cdot v \, dx = u \int v \, dx - \int \left( \frac{du}{dx} \cdot \int v \, dx \right) dx \] </div>
-		<!--div class="formula"> \[ \text{ (xiii)   } \int u'v \, dx = uv - \int uv' \, dx \quad  \]</div> <\text{(Integration by parts)}-->
-		<div class="formula"> \[ \text{ (xiv)   } \int \frac{1}{1 + x^2} \, dx = \tan^{-1}(x) + C \]</div>
-		<div class="formula"> \[ \text{ (xv)   } \int \frac{1}{\sqrt{1 - x^2}} \, dx = \sin^{-1}(x) + C \]</div>
-		<div class="formula"> \[ \text{ (xvi)   } \int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C \]</div>
-		<div class="formula"> \[ \text{ (xvii)   } \int \frac{1}{\sqrt{x^2 + a^2}} \, dx = \ln\left|x + \sqrt{x^2 + a^2}\right| + C \]</div>
-		<div class="formula"> \[ \text{ (xviii)   } \int \frac{1}{\sqrt{x^2 - a^2}} \, dx = \ln\left|x + \sqrt{x^2 - a^2}\right| + C \quad \]</div> <!--(|x| > a) -->
-		<div class="formula"> \[ \text{ (xix)   } \int \sec^2(x) \, dx = \tan(x) + C \]</div>
-		<div class="formula"> \[ \text{ (xx)   } \int \csc^2(x) \, dx = -\cot(x) + C \]</div>
-		<div class="formula"> \[ \text{ (xxi)   } \int \sec(x)\tan(x) \, dx = \sec(x) + C \]</div>
-		<div class="formula"> \[ \text{ (xxii)   } \int \csc(x)\cot(x) \, dx = -\csc(x) + C \]</div>
-		<div class="formula"> \[ \text{ (xxiii)   } \int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1}\left(\frac{x}{a}\right) + C \]</div>
-		<div class="formula"> \[ \text{ (xxiv)   } \int \frac{dx}{x^2 - a^2} = \frac{1}{2a} \ln\left|\frac{x - a}{x + a}\right| + C \]</div>
-	</div>
+<h2>1. Basic Power and Elementary Functions</h2>
+<div class="container">
+  <div class="formula"><span>(1)</span> \[ \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \ne -1) \]</div>
+  <div class="formula"><span>(8)</span> \[ \int e^x \, dx = e^x + C \]</div>
+  <div class="formula"><span>(9)</span> \[ \int \frac{1}{x} \, dx = \ln|x| + C \]</div>
+  <div class="formula"><span>(10)</span> \[ \int a^x \, dx = \frac{a^x}{\ln a} + C \quad (a > 0, a \ne 1) \]</div>
+  <div class="formula"><span>(11)</span> \[ \int \ln(x) \, dx = x \ln(x) - x + C \]</div>
+  <div class="formula"><span>(12)</span> \[ \int (u \pm v) \, dx = \int u \, dx \pm \int v \, dx \]</div>
+  <div class="formula"><span>(13)</span> \[ \int u \cdot v \, dx = u \int v \, dx - \int \left( \frac{du}{dx} \cdot \int v \, dx \right) dx \]</div>
+</div>
+
+<h2>2. Trigonometric Integrals</h2>
+<div class="container">
+  <div class="formula"><span>(2)</span> \[ \int \sin(nx) \, dx = -\frac{1}{n} \cos(nx) + C \]</div>
+  <div class="formula"><span>(3)</span> \[ \int \cos(x) \, dx = \sin(x) + C \]</div>
+  <div class="formula"><span>(4)</span> \[ \int \tan(x) \, dx = -\ln|\cos(x)| + C \]</div>
+  <div class="formula"><span>(5)</span> \[ \int \cot(x) \, dx = \ln|\sin(x)| + C \]</div>
+  <div class="formula"><span>(6)</span> \[ \int \sec(x) \, dx = \ln|\sec(x) + \tan(x)| + C \]</div>
+  <div class="formula"><span>(7)</span> \[ \int \csc(x) \, dx = -\ln|\csc(x) + \cot(x)| + C \]</div>
+  <div class="formula"><span>(19)</span> \[ \int \sec^2(x) \, dx = \tan(x) + C \]</div>
+  <div class="formula"><span>(20)</span> \[ \int \csc^2(x) \, dx = -\cot(x) + C \]</div>
+  <div class="formula"><span>(21)</span> \[ \int \sec(x) \tan(x) \, dx = \sec(x) + C \]</div>
+  <div class="formula"><span>(22)</span> \[ \int \csc(x) \cot(x) \, dx = -\csc(x) + C \]</div>
+</div>
+
+<h2>3. Inverse Trigonometric Functions</h2>
+<div class="container">
+  <div class="formula"><span>(14)</span> \[ \int \frac{1}{1 + x^2} \, dx = \tan^{-1}(x) + C \]</div>
+  <div class="formula"><span>(15)</span> \[ \int \frac{1}{\sqrt{1 - x^2}} \, dx = \sin^{-1}(x) + C \]</div>
+  <div class="formula"><span>(16)</span> \[ \int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C \]</div>
+  <div class="formula"><span>(23)</span> \[ \int \frac{1}{\sqrt{a^2 - x^2}} \, dx = \sin^{-1}\left(\frac{x}{a}\right) + C \]</div>
+</div>
+
+<h2>4. Logarithmic and Rational Function Integrals</h2>
+<div class="container">
+  <div class="formula"><span>(17)</span> \[ \int \frac{1}{\sqrt{x^2 + a^2}} \, dx = \ln\left| x + \sqrt{x^2 + a^2} \right| + C \]</div>
+  <div class="formula"><span>(18)</span> \[ \int \frac{1}{\sqrt{x^2 - a^2}} \, dx = \ln\left| x + \sqrt{x^2 - a^2} \right| + C \quad (|x| > a) \]</div>
+  <div class="formula"><span>(24)</span> \[ \int \frac{1}{x^2 - a^2} \, dx = \frac{1}{2a} \ln\left|\frac{x - a}{x + a}\right| + C \]</div>
+</div>
 
 
-	
+<h2>5. Special Forms Involving Derivatives</h2>
+<div class="container">
+  <div class="formula"><span>(25)</span> \[ \int \frac{f'(x)}{\sqrt{f(x)}} \, dx = 2 \sqrt{f(x)} + C \]</div>
+  <div class="formula"><span>(26)</span> \[ \int \frac{f'(x)}{[f(x)]^n} \, dx = \frac{[f(x)]^{1-n}}{1-n} + C \quad (n \neq 1) \]</div>
+</div>
+
+<script>
+  document.querySelectorAll('span').forEach(span => span.style.display = 'none');
+</script>
+
 </body>
 </html>
