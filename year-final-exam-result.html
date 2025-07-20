@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>Year Final Exam Result | 1st Year HSC - Science 2024-2025 | Dhaka Collage</title>
   <link rel="icon" type="image/png" href="https://static.thenounproject.com/png/4917068-200.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
   <style>
     @media print {
       .student-block { page-break-after: always; }
@@ -16,6 +18,8 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', sans-serif;
+
       margin: 40px;
       background: #f9f9f9;
       color: #333;
@@ -144,12 +148,21 @@
   padding-bottom: 8px;
 }
 
+
 .card-header h3 {
   font-size: 18px;
   color: #1e3a8a;
   margin: 0;
 }
 
+.card-title h3 {
+  font-size: 1.4rem;
+  
+}
+.card-title p {
+  opacity: 0.8;
+  font-size: 70%;
+}
 .pass-rate {
   background: #dcfce7;
   color: #16a34a;
@@ -245,6 +258,8 @@
   position: sticky;
   top: 0;
 }
+
+
 
 
 
@@ -35015,33 +35030,67 @@
     const totalStudent = studentsAttendedExamCounter(1,900);
     const totalFailed = gradeCounterOverall(1,900,'F');
     const totalPassed = totalStudent - totalFailed;
-    container2.innerHTML = `
-        <div class="subject-card">
-        <div class="card-header">
-          <h3>Year Final Result</h3>
-          <span class="pass-rate">Pass Rate: ${ ((totalPassed / totalStudent) * 100).toFixed(2)}</span>
-        </div>
-        <div class="card-body">
-          <div class="stat-row"><span>Total Students Attended the exam</span><strong>${totalStudent}</strong></div>
-          <div class="stat-row"><span>Total Passed</span><strong>${totalPassed}</strong></div>
-          <div class="stat-row"><span>Total Failed</span><strong class="fail">${totalFailed}</strong></div>
-          <div class="stat-row"><span>Got A+</span><strong class="grade-a">${gradeCounterOverall(1,900,'A+')}</strong></div>
-          <div class="stat-row"><span>Got A</span><strong>${gradeCounterOverall(1,900,'A-')}</strong></div>
-          <div class="stat-row"><span>Got A−</span><strong>${gradeCounterOverall(1,900,'A')}</strong></div>
-          <div class="stat-row"><span>Got B</span><strong>${gradeCounterOverall(1,900,'B')}</strong></div>
-          <div class="stat-row"><span>Got C</span><strong>${gradeCounterOverall(1,900,'C')}</strong></div>
-          <div class="stat-row"><span>Got F</span><strong class="fail">${gradeCounterOverall(1,900,'F')}</strong></div>
-          <div class="stat-row"><span>Failed In One Subject</span><strong>${failedCounter(1,900,1)}</strong></div>
-          <div class="stat-row"><span>Failed In Two Subjects</span><strong>${failedCounter(1,900,2)}</strong></div>
-          <div class="stat-row"><span>Failed In Three Subjects</span><strong>${failedCounter(1,900,3)}</strong></div>
-          <div class="stat-row"><span>Failed In Four Subjects</span><strong>${failedCounter(1,900,4)}</strong></div>
-          <div class="stat-row"><span>Failed In Five Subjects or more</span><strong>${[5,6,7,8].map(i => failedCounter(1,900,i)).reduce((acc, val) => acc + val, 0)}
-</strong></div>
+//     container2.innerHTML = `
+//         <div class="subject-card">
+//         <div class="card-header">
+//           <h3>Year Final Result</h3>
+//           <span class="pass-rate">Pass Rate: ${ ((totalPassed / totalStudent) * 100).toFixed(2)}</span>
+//         </div>
+//         <div class="card-body">
+//           <div class="stat-row"><span>Total Students Attended the exam</span><strong>${totalStudent}</strong></div>
+//           <div class="stat-row"><span>Total Passed</span><strong>${totalPassed}</strong></div>
+//           <div class="stat-row"><span>Total Failed</span><strong class="fail">${totalFailed}</strong></div>
+//           <div class="stat-row"><span>Got A+</span><strong class="grade-a">${gradeCounterOverall(1,900,'A+')}</strong></div>
+//           <div class="stat-row"><span>Got A</span><strong>${gradeCounterOverall(1,900,'A-')}</strong></div>
+//           <div class="stat-row"><span>Got A−</span><strong>${gradeCounterOverall(1,900,'A')}</strong></div>
+//           <div class="stat-row"><span>Got B</span><strong>${gradeCounterOverall(1,900,'B')}</strong></div>
+//           <div class="stat-row"><span>Got C</span><strong>${gradeCounterOverall(1,900,'C')}</strong></div>
+//           <div class="stat-row"><span>Got F</span><strong class="fail">${gradeCounterOverall(1,900,'F')}</strong></div>
+//           <div class="stat-row"><span>Failed In One Subject</span><strong>${failedCounter(1,900,1)}</strong></div>
+//           <div class="stat-row"><span>Failed In Two Subjects</span><strong>${failedCounter(1,900,2)}</strong></div>
+//           <div class="stat-row"><span>Failed In Three Subjects</span><strong>${failedCounter(1,900,3)}</strong></div>
+//           <div class="stat-row"><span>Failed In Four Subjects</span><strong>${failedCounter(1,900,4)}</strong></div>
+//           <div class="stat-row"><span>Failed In Five Subjects or more</span><strong>${[5,6,7,8].map(i => failedCounter(1,900,i)).reduce((acc, val) => acc + val, 0)}
+// </strong></div>
 
           
-        </div>
+//         </div>
+//       </div>
+//     `;
+  
+  container2.innerHTML = `
+  <div class="subject-card">
+    <div class="card-header">
+      <div class="card-title">
+        <h3>Year-Final Exam Result</h3>
+        <p>1st Year HSC – Science (2024–2025) | Dhaka College</p>  
       </div>
-    `;
+      <span class="pass-rate">Pass Rate: ${((totalPassed / totalStudent) * 100).toFixed(2)}%</span>
+    </div>
+    <div class="card-body">
+      <div class="stat-row"><span>Total Students Attended the Exam</span><strong>${totalStudent}</strong></div>
+      <div class="stat-row"><span>Total Passed</span><strong>${totalPassed}</strong></div>
+      <div class="stat-row"><span>Total Failed</span><strong class="fail">${totalFailed}</strong></div>
+      
+      <div class="stat-row"><span>Got A+</span><strong class="grade-a">${gradeCounterOverall(1, 900, 'A+')}</strong></div>
+      <div class="stat-row"><span>Got A</span><strong>${gradeCounterOverall(1, 900, 'A')}</strong></div>
+      <div class="stat-row"><span>Got A−</span><strong>${gradeCounterOverall(1, 900, 'A-')}</strong></div>
+      <div class="stat-row"><span>Got B</span><strong>${gradeCounterOverall(1, 900, 'B')}</strong></div>
+      <div class="stat-row"><span>Got C</span><strong>${gradeCounterOverall(1, 900, 'C')}</strong></div>
+      <div class="stat-row"><span>Got F</span><strong class="fail">${gradeCounterOverall(1, 900, 'F')}</strong></div>
+      
+      <div class="stat-row"><span>Failed in One Subject</span><strong>${failedCounter(1, 900, 1)}</strong></div>
+      <div class="stat-row"><span>Failed in Two Subjects</span><strong>${failedCounter(1, 900, 2)}</strong></div>
+      <div class="stat-row"><span>Failed in Three Subjects</span><strong>${failedCounter(1, 900, 3)}</strong></div>
+      <div class="stat-row"><span>Failed in Four Subjects</span><strong>${failedCounter(1, 900, 4)}</strong></div>
+      <div class="stat-row"><span>Failed in Five or More Subjects</span><strong>${
+        [5, 6, 7, 8].map(i => failedCounter(1, 900, i)).reduce((acc, val) => acc + val, 0)
+      }</strong></div>
+    </div>
+  </div>
+`;
+
+  
   </script>
   <!-- <script>
 	console.log('I am here');
