@@ -34898,17 +34898,17 @@
     function gradeCounter(start = 1, end = 900, subject, grade = 'A+'){
       let count = 0;
       for(let i = start; i <= end; i++){
-        if(!data[i]) continue;
-        if(data[i][subject]?.grade === grade) count+=1;
+        if(!cleanData[i]) continue;
+        if(cleanData[i][subject]?.grade === grade) count+=1;
       }
       return count;
     }    
     function gradeCounterOverall(start = 1, end = 900, grade = 'A+'){
       let count = 0;
       for(let i = start; i <= end; i++){
-        if(!data[i]) continue;
+        if(!cleanData[i]) continue;
         if(studentsNotGotAdmitCard.includes(i)) continue;
-        if(gpaToGrade(parseFloat(data[i].GPAWithAditional)) === grade) count+=1;
+        if(gpaToGrade(parseFloat(cleanData[i].GPAWithAditional)) === grade) count+=1;
       }
       return count;
     }
